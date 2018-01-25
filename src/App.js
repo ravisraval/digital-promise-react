@@ -159,7 +159,8 @@ class App extends Component {
           { gists }
         </ul>
 
-        <Modal show={this.state.isModalOpen}
+        <Modal
+          show={this.state.isModalOpen}
           onHide={() => this.closeModal()}
           onExit={() => this.closeModal()}
           >

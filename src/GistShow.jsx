@@ -24,7 +24,7 @@ class GistShow extends React.Component {
   }
 
   componentDidMount() {
-    const gist = this.props.gist;
+    const { gist } = this.props;
     // assuming each gist has only one file,
     // as all digital promise test files do
     // if each gist had multiple files, would have to do some nesting here
@@ -62,7 +62,7 @@ class GistShow extends React.Component {
   }
 
   handleInputChange(event) {
-    const target = event.target;
+    const { target } = event;
     const { name, value } = target;
     this.setState({
       [name]: value, updateAllowed: true,
@@ -71,7 +71,7 @@ class GistShow extends React.Component {
   }
 
   updateGist() {
-    const gist = this.props.gist;
+    const { gist } = this.props;
     const { content, description, filename, oldFilename } = this.state;
     const data = {
       'description': description,
@@ -108,7 +108,7 @@ class GistShow extends React.Component {
   }
 
   toggleStar() {
-    const gist = this.props.gist;
+    const { gist } = this.props;
 
     if (this.state.starred) {
       axios.delete(`https://api.github.com/gists/${gist.id}/star`, {
@@ -144,9 +144,9 @@ class GistShow extends React.Component {
   }
 
   render() {
-    const { starred, txtUpdated, starUpdated } = this.state
-    const starBtnText = ( starred ? 'Unstar' : 'Star' )
-    const starBtnStyle = ( starred ? 'danger' : 'success' )
+    const { starred, txtUpdated, starUpdated } = this.state;
+    const starBtnText = ( starred ? 'Unstar' : 'Star' );
+    const starBtnStyle = ( starred ? 'danger' : 'success' );
 
     const updatedText = ( () => {
       if (txtUpdated) {

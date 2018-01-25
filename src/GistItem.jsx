@@ -4,13 +4,10 @@ import { Button } from 'react-bootstrap';
 class GistItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
   }
 
   render() {
-    const gist = this.props.gist;
+    const { gist } = this.props;
     const description = (
       gist.description === '' ? '(no description)' : gist.description
     )
