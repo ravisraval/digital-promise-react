@@ -1,0 +1,25 @@
+.bar {
+  margin: 10px 0;
+  display: flex;
+  flex-flow: column;
+}
+
+.settings {
+  margin: 10px;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  width: 70vw;
+  justify-content: space-between;
+}
+
+.App {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gist-list {
+  list-style: none;
+}
